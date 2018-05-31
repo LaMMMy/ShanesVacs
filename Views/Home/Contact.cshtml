@@ -1,0 +1,83 @@
+﻿@model shanesvacuums.Models.MailModel
+@{
+    ViewBag.Title = "Contact Shane's";
+}
+<h2>@ViewBag.Title.</h2>
+
+<p>
+    Use the form on this page send us a quick note and we will be in contact with you as soon as possible.<br />
+    Just include your name, email address or phone number and a brief description of how we may help you and sit back and let us do the rest.<br />
+    Or, if it's more convenient, please give any one of Shane, Mike or Dakota a call at:
+</p>
+<br />
+
+<table>
+    <tbody>
+        <tr>
+            <td><abbr title="Phone Shane"><strong>Shane:</strong></abbr></td>
+            <td><a href="tel:+12508610621">250.861.0621</a></td>
+        </tr>
+        <tr>
+            <td><abbr title="Phone Mike"><strong>Mike:</strong></abbr></td>
+            <td><a href="tel:+12508086822">250.808.6822</a></td>
+        </tr>
+        <tr>
+            <td><abbr title="Phone Dakota"><strong>Dakota:</strong></abbr></td>
+            <td><a href="tel:+12508688716">250.868.8716</a></td>
+        </tr>
+    </tbody>
+</table>
+@*<address>*@
+@*<abbr title="Phone Shane"><strong>Shane:</strong></abbr><a href="tel:+12508610621">250.861.0621</a><br />
+    <abbr title="Phone Mike"><strong>Mike:</strong></abbr><a href="tel:+12508086822">250.808.6822</a><br />
+    <abbr title="Phone Dakota"><strong>Dakota:</strong></abbr><a href="tel:+12508688716">250.868.8716</a><br />*@
+@*</address>*@
+<br />
+
+@*<h2>Contact Form</h2>
+    <span>* Required Fields</span>
+    <br />
+    @if (ViewBag.SuccessMessage != null && ViewBag.SuccessMessage != "")
+    {
+        @:<p class="alert alert-success" role="alert">
+            @ViewBag.SuccessMessage
+        @:</p>
+    }
+    @if (ViewBag.ErrorMessage != null && ViewBag.ErrorMessage != "")
+    {
+        @:<p class="alert alert-danger" role="alert">
+            @ViewBag.ErrorMessage
+        @:</p>
+    }
+
+    @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
+    {
+        @Html.ValidationSummary()
+        <fieldset>
+            <div>
+                <label class="name">
+                    @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name *", @type = "text", @class = "form-control" })
+                </label>
+            </div>
+            <div>
+                <label class="email">
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address *", @type = "email", @class = "form-control" })
+                </label>
+            </div>
+            <div>
+                <label class="phone">
+                    @Html.TextBoxFor(m => m.Telephone, new { @placeholder = "Telephone Number", @type = "text", @class = "form-control" })
+                </label>
+            </div>
+            <div>
+                <label class="message">
+                    @Html.TextAreaFor(m => m.Message, new { @placeholder = "Message *", @class = "form-control messageTextArea" })
+                </label>
+            </div>
+            <div class="button-wrapper">
+                <input type="submit" value="Send" name="submit" class="button"> <input type="reset" value="Reset" name="MFReset" class="button">
+            </div>
+        </fieldset>
+    }*@
+
+

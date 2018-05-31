@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shane's Built-In Vacuums - @ViewBag.Title - Kelowna BC</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-48405024-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <!-- begin header -->
+    <div id="header">
+        <div id="headercontent">
+            
+            <div id="headerLogo" class="hea">SHANE'S <br /></div>
+            <div id="subLogo">Built-In Vacuums Ltd.</div>
+            @*<br />
+            <div id="burst" class="burst">
+                <a href="#" class="starburst hidden-sm hidden-xs">
+                    <span>
+                        <span>
+                            <span>
+                                <br />@(DateTime.Now.Year - 1986) Years<br />1986 - @DateTime.Now.Year
+                            </span>
+                        </span>
+                    </span>
+                </a>
+            </div>*@
+        </div>
+    </div>
+    <!-- /end header -->
+    @*@Html.ActionLink("Shane's Built in Vacuums -- Kelowna BC", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Products", "Products", "Home")</li>
+                    <li>@Html.ActionLink("About Us", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <hr />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 hidden-sm hidden-xs">
+                    <a href="builtin-vacuums.php"><img src="~/Content/Images/see_demo.png" alt="Vacuum Demo" /></a>
+                </div>
+                <div class="starfootContainer col-md-4 hidden-sm hidden-xs">
+                    <a href="#" class="starfoot">
+                        <span>
+                            <span>
+                                <span>
+                                    Built-In Service Calls<br />$59
+                                </span>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <table id="phoneTable" cellpadding="0">
+                        <tr>
+                            <td colspan="2" class="phoneHeader">
+                                Call Today for a Free Estimate
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Shane:
+                            </td>
+                            <td>
+                                250.861.0621
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mike:
+                            </td>
+                            <td>
+                                250.808.6822
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Dakota:
+                            </td>
+                            <td>
+                                250.868.8716
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br />
+        <p>
+            &copy; @DateTime.Now.Year - Shane's Built In Vacuums
+        </p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</body>
+</html>

@@ -1,0 +1,327 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: #eaeff5;
+}
+
+    #headercontent {
+        display: inline-block;
+        width: 45%;
+    }
+
+    #header h1 {
+        display: flex; 
+        height: 221px;
+        background: url(Images/logo.png) no-repeat 0 0;
+        margin: 0;
+        text-indent: -999px;
+    }
+
+        #header h1 a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+
+.starburst {
+    display: block;
+    width: 6em;
+    height: 6em;
+    background: #990100;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    rotation: -45deg;
+    /*position: absolute;
+    top: 13%;
+    left: 75%;*/
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: ghostwhite;
+}
+
+    .starburst span {
+        display: block;
+        width: 6em;
+        height: 6em;
+        background: #990100;
+        -webkit-transform: rotate(22.5deg);
+        -moz-transform: rotate(22.5deg);
+        -ms-transform: rotate(22.5deg);
+        rotation: 22.5deg;
+    }
+
+    #headerLogo {
+        font-family: 'Arial Black';
+        font-weight: bold;
+        font-size: 12em;
+    }
+
+    #subLogo {
+        font-family: 'Arial Black';
+        font-weight: bold;
+        font-size: 68px;
+        margin-top: -62px;
+    }
+
+    #headerLogo, #subLogo {
+        -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 4px;
+        -webkit-text-stroke-color: white;
+    }
+
+.burst{
+    padding-bottom: 30px;
+    padding-left: 27.5em;
+}
+
+footer {
+    background-color: #eaeff5;
+    padding-bottom: 50px;
+}
+    footer > hr {
+        background-color: darkred !important;
+        color: darkred !important;
+        border: solid 2px darkred !important;
+        height: 5px !important;
+    }
+
+    footer p {
+        margin-bottom: 0;
+        padding-left: 20px;
+    }
+
+.starfoot {
+    display: block;
+    width: 6em;
+    height: 6em;
+    background: #990100;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    rotation: -45deg;
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    color: ghostwhite;
+}
+
+        .starfoot span {
+            display: block;
+            width: 6em;
+            height: 6em;
+            background: #990100;
+            -webkit-transform: rotate(22.5deg);
+            -moz-transform: rotate(22.5deg);
+            -ms-transform: rotate(22.5deg);
+            rotation: 22.5deg;
+        }
+
+        .starfootContainer {
+            padding-left: 11em;
+            width: 28%;
+        }
+
+.products {
+    margin-bottom: 40px;
+    padding-left: 0 !important;
+}
+    .products ul {
+        list-style: none;
+        padding: 0;
+    }
+
+.vacspecs {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+h2, .h2 {
+    font-size: 20px;
+}
+
+.navbar-default {
+    background-color: #920300;
+    border-color: #690907;
+}
+
+    .navbar-default .navbar-nav > li > a {
+        color: whitesmoke;
+    }
+
+#sameDay {
+    text-align: center;
+}
+    #sameDay h1 {
+        color: #990000;
+        font-size: 48pt;
+    }
+
+#phoneTable {
+    font-size: 32px;
+    font-weight: bolder;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;    
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+    #phoneTable .phoneHeader {
+        font-size: 24px;
+        -webkit-text-fill-color: #920300;
+    }
+
+.messageTextArea{
+    height: 122px !important;
+    width: 475px;
+    margin: 0;
+}
+
+
+@media all and (max-device-width: 720px) {
+    #headercontent {
+        width: 100%;
+    }
+
+    #headerLogo {
+        font-size: 5em;
+        margin-bottom: 0.5em;
+    }
+
+    #subLogo {
+        font-size: 3.5em;
+    }
+
+    .products {
+        text-align: center;
+    }
+}
+
+@media all and (max-device-width: 640px) {
+    #headercontent {
+        width: 100%;
+    }
+
+    #headerLogo {
+        font-size: 5em;
+        margin-bottom: 0.5em;
+    }
+
+    #subLogo {
+        font-size: 4em;
+        font-size: 3.5em;
+    }
+
+    .products {
+        text-align: center;
+    }
+}
+
+@media all and (max-device-width: 320px) {
+    #headercontent {
+        width: 100%;
+    }
+
+    #headerLogo {
+        font-size: 5em;
+        margin-bottom: 0.5em;
+    }
+
+    #subLogo {
+        font-size: 4em;
+        font-size: 3.5em;
+    }
+
+    .products {
+        text-align: center;
+    }
+}
+
+/*.starfoot {
+    font: 4em/1.4 'Lobster', georgia, serif;
+    background: #202020;
+
+    width: 3.5em;
+    height: 3.5em;
+    text-align: center;
+    color: #fff;
+}
+
+    .starfoot,
+    .starfoot span {
+        display: box;
+        box-align: center;
+        box-pack: center;
+    }
+
+
+        .starfoot span {
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            transform: rotate(45deg);
+        }
+
+            .starfoot:before,
+            .starfoot:after,
+            .starfoot span:before,
+            .starfoot span:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: inherit;
+                z-index: -1;
+                transform: rotate(30deg);
+            }
+
+        .starfoot:after {
+            transform: rotate(-30deg);
+        }
+
+        .starfoot span:after {
+            transform: rotate(30deg);
+        }
+
+        .starfoot span:before {
+            transform: rotate(-30deg);
+        }
+
+.servicecalls {
+    position: absolute;
+    top: 50%;
+    margin-top: -1.25em;
+    margin-left: -1.25em;
+}*/

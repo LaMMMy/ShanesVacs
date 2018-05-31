@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h2 class="text-center">Family Run and Serving YOU Since 1986.</h2>
+    <div class="row">
+        <div class="col-md-6 col-xs-12"><img src="~/Content/images/vans.jpg" class="img-responsive" alt="Shane Vans" /></div>
+        <div class="col-md-6 col-xs-12"><img src="~/Content/images/lady.jpg" class="img-responsive" alt="Hide-a-Hose" /></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>About Us</h2>
+        <p>
+            See who we are and what we do.
+        </p>
+        <p>
+            @Html.ActionLink("Read More \u00bb", "About", "Home", new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Our Products</h2>
+        <div class="row">
+            <div class="col-xs-6">
+                <p>Browse the quality products we install and support.</p>
+            </div>
+            <div class="col-xs-6">
+                <img src="~/Content/Images/products.jpg" alt="OUR Products" />
+            </div>
+        </div>
+        <p>
+            @Html.ActionLink("Read More \u00bb", "Products", "Home", new { @class = "btn btn-default" })
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Contact Us</h2>
+        <p>Send us a request and we will be happy to help.</p>
+        <p>
+            @Html.ActionLink("Read More \u00bb", "Contact", "Home", new { @class = "btn btn-default" })
+        </p>
+    </div>
+</div>
+<div class="row hidden-xs">
+    <div class="col-md-12">
+        <div id="sameDay">
+            <h1>SAME DAY INSTALLATIONS</h1>
+        </div>
+    </div>
+</div>
