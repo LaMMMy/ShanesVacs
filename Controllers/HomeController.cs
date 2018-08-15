@@ -70,7 +70,7 @@ namespace shanesvacuums.Controllers
                     var response = SendMailTask(message.ToString(), HTMLContent.ToString());
                     Response result = response.Result;
 
-                    ViewBag.SuccessMessage = "Your message has been sent! Thank you!";                    
+                    ViewBag.SuccessMessage = "Your message has been sent! Thank you!";
                 }
             }
             catch (Exception ex)
@@ -87,7 +87,7 @@ namespace shanesvacuums.Controllers
         {
             // maybe need APPSETTING_SENDGRID_APIKEY
             //var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
-            string apiKey = WebConfigurationManager.AppSettings["SENDGRID_APIKEY"]; 
+            var apiKey = WebConfigurationManager.AppSettings["SENDGRID_APIKEY"];
             var client = new SendGridClient(apiKey);
 
             string emailToAddresses = WebConfigurationManager.AppSettings["emailToAddresses"];
@@ -102,12 +102,12 @@ namespace shanesvacuums.Controllers
                 From = new EmailAddress(emailFromAddress, "Shane's Built In Vacuums Web Form"),
                 Subject = emailSubject,
                 PlainTextContent = emailContentMessage,
-                HtmlContent = emailHTMLContent                
+                HtmlContent = emailHTMLContent
             };
 
             if (isTest > 0)
-            {                
-                
+            {
+
             }
             else
             {
@@ -119,8 +119,11 @@ namespace shanesvacuums.Controllers
             }
 
             msg.AddBcc(new EmailAddress(emailBCC));
-            
+
             var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
+            Console.WriteLine(response.StatusCode);
+            Console.WriteLine(response.Body.ReadAsStringAsync().Result); // The message will be here
+            Console.WriteLine(response.Headers.ToString());
             return response;
         }
 
