@@ -33,8 +33,9 @@ namespace shanesvacuums.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact Shane's";
-
-            return View();
+            MailModel mailModel = new MailModel();
+            mailModel.EmailSent = false;
+            return View(mailModel);
         }
 
         public ActionResult Products()
@@ -51,7 +52,6 @@ namespace shanesvacuums.Controllers
             {
                 if (ModelState.IsValid)
                 {
-
                     //prepare email
                     var message = new StringBuilder();
                     message.Append("A new quote request has been received");
@@ -70,7 +70,7 @@ namespace shanesvacuums.Controllers
                     var response = SendMailTask(message.ToString(), HTMLContent.ToString());
                     Response result = response.Result;
 
-                    ViewBag.SuccessMessage = "Your message has been sent! Thank you!";
+                    ViewBag.SuccessMessage = "Your message has been sent! Thank you!";                    
                 }
             }
             catch (Exception ex)
@@ -78,8 +78,9 @@ namespace shanesvacuums.Controllers
                 //Response.Write("Exception occurred: " + ex.Message);
                 ViewBag.ErrorMessage = "Exception occurred: " + ex.Message;
             }
-
-            return View();
+            MailModel mailModel = new MailModel();
+            mailModel.EmailSent = true;
+            return View(mailModel);
         }
 
         public static async Task<Response> SendMailTask(string emailContentMessage, string emailHTMLContent)

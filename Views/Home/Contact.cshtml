@@ -36,7 +36,8 @@
 @*</address>*@
 <br />
 
-@*<h2>Contact Form</h2>
+<div id="mailForm">
+    <h2>Contact Form</h2>
     <span>* Required Fields</span>
     <br />
     @if (ViewBag.SuccessMessage != null && ViewBag.SuccessMessage != "")
@@ -54,32 +55,35 @@
 
     @using (Html.BeginForm("Contact", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "contact-form", role = "form" }))
     {
-        @Html.ValidationSummary()
-        <fieldset>
-            <div>
-                <label class="name">
-                    @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name *", @type = "text", @class = "form-control" })
-                </label>
-            </div>
-            <div>
-                <label class="email">
-                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address *", @type = "email", @class = "form-control" })
-                </label>
-            </div>
-            <div>
-                <label class="phone">
-                    @Html.TextBoxFor(m => m.Telephone, new { @placeholder = "Telephone Number", @type = "text", @class = "form-control" })
-                </label>
-            </div>
-            <div>
-                <label class="message">
-                    @Html.TextAreaFor(m => m.Message, new { @placeholder = "Message *", @class = "form-control messageTextArea" })
-                </label>
-            </div>
-            <div class="button-wrapper">
-                <input type="submit" value="Send" name="submit" class="button"> <input type="reset" value="Reset" name="MFReset" class="button">
-            </div>
-        </fieldset>
-    }*@
+        if (!Model.EmailSent)
+        {
+            @Html.ValidationSummary()
+            <fieldset>
+                <div>
+                    <label class="name">
+                        @Html.TextBoxFor(m => m.Name, new { @placeholder = "Name *", @type = "text", @class = "form-control", @required = "required" })
+                    </label>
+                </div>
+                <div>
+                    <label class="email">
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Email Address *", @type = "email", @class = "form-control", @required = "required" })
+                    </label>
+                </div>
+                <div>
+                    <label class="phone">
+                        @Html.TextBoxFor(m => m.Telephone, new { @placeholder = "Telephone Number", @type = "text", @class = "form-control" })
+                    </label>
+                </div>
+                <div>
+                    <label class="message">
+                        @Html.TextAreaFor(m => m.Message, new { @placeholder = "Message *", @class = "form-control messageTextArea", @required = "required" })
+                    </label>
+                </div>
+                <div class="button-wrapper">
+                    <input type="submit" value="Send" name="submit" class="button"> <input type="reset" value="Reset" name="MFReset" class="button">
+                </div>
+            </fieldset>
+        }
+    }
 
-
+</div>
